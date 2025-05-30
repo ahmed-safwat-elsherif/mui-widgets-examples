@@ -9,13 +9,7 @@ const theme = createTheme({});
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles
-        styles={{
-          button: {
-            fontFamily: "inherit",
-          },
-        }}
-      />
+      <GlobalStyles />
       <CssBaseline />
       {/* <Navbar /> */}
       <Routes>
