@@ -16,19 +16,12 @@ import ProductCard from "./examples/ProductCard";
 import SelectForm from "./examples/SelectForm";
 import SimpleTabs from "./examples/SimpleTabs";
 import MusicPlayer from "./examples/MusicPlayer";
+import { Route, Routes } from "react-router";
+import Task1 from "./pages/Task1";
+import Task2 from "./pages/Task2";
+import Navbar from "./components/Navbar";
 
 const theme = createTheme({});
-
-const widgets = [
-  { label: "Chat App", Component: ChatApp },
-  { label: "Contact List", Component: ContactList },
-  { label: "Dashboard Widget", Component: DashboardWidget },
-  { label: "Login Form", Component: LoginForm },
-  { label: "Notification Example", Component: NotificationExample },
-  { label: "Product Card", Component: ProductCard },
-  { label: "Select Form", Component: SelectForm },
-  { label: "Simple Tabs", Component: SimpleTabs },
-];
 
 function App() {
   return (
@@ -41,22 +34,12 @@ function App() {
         }}
       />
       <CssBaseline />
-      <Stack
-        spacing={5}
-        maxWidth={600}
-        mx="auto"
-        py={3}
-        divider={<Divider flexItem />}
-      >
-        {widgets.map(({ label, Component }) => (
-          <Box key={label}>
-            <Typography variant="h1" fontSize={30} gutterBottom>
-              {label}
-            </Typography>
-            <Component />
-          </Box>
-        ))}
-      </Stack>
+      {/* <Navbar /> */}
+      <Routes>
+        <Route index element={<Task1 />} />
+        <Route path="/task-1" element={<Task1 />} />
+        <Route path="/task-2" element={<Task2 />} />
+      </Routes>
     </ThemeProvider>
   );
 }
